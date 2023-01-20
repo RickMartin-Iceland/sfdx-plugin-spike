@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.0/containers/sfdx-project
+{
+  "name": "Salesforce Project",
+  "dockerFile": "Dockerfile",
+  "containerEnv": {
+    "SFDX_DISABLE_AUTOUPDATE": "true"
+  },
+  "extensions": [
+    "salesforce.salesforcedx-vscode",
+    "redhat.vscode-xml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "fabiospampinato.vscode-todo-plus",
+    "fabiospampinato.vscode-highlight",
+    "chuckjonas.apex-pmd",
+    "btamburrino.apex-javadoc"
+  ],
+  "settings": {
+    "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "force.showApexJavadocTrailingCloseComment": false
+  },
+  "workspaceMount": "type=bind,src=${localWorkspaceFolder}/,dst=/workspace/",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "npm install -g yarn typescript"
+}
